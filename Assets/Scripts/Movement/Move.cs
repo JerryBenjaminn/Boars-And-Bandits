@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Move : MonoBehaviour
+namespace BAB.Movement
 {
-
-    void Update()
-    {  
-        UpdateAnimator();      
-    }
-
-    public void MoveTo(Vector3 destination)
+    public class Move : MonoBehaviour
     {
-        GetComponent<NavMeshAgent>().destination = destination;
-    }
 
-    private void UpdateAnimator()
-    {
-        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
-        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        float speed = localVelocity.z;
-        GetComponent<Animator>().SetFloat("Velocity", speed);
+        void Update()
+        {
+            UpdateAnimator();
+        }
+
+        public void MoveTo(Vector3 destination)
+        {
+            GetComponent<NavMeshAgent>().destination = destination;
+        }
+
+        private void UpdateAnimator()
+        {
+            Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            GetComponent<Animator>().SetFloat("Velocity", speed);
+        }
     }
 }
