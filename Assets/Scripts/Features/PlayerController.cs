@@ -23,13 +23,13 @@ namespace BAB.Control
                 Enemy target = hit.transform.GetComponent<Enemy>(); 
                 if (target == null) continue; //Jos vihollista ei löydetä, niin säde jatkaa eteenpäin
 
-                if (Input.GetMouseButton(0)) // Jos vihollinen löydetään, niin haetaan fight scriptin Attack()- metodi ja hyökätään kohteen kimppuun
+                if (Input.GetMouseButton(0)) 
                 {
                     GetComponent<Fight>().Attack(target);                   
                 }
-                return true; //Palautetaan tosi, jos vihollinen löytyy
+                return true; 
             }
-            return false; //Palautetaan epätosi ja voidaan jatkaa liikkumista normaalisti
+            return false; 
         }
 
         private bool InteractWithMovement() // Luodaan metodi, joka tarkastaa voidaanko hiiren painamaan sijaintiin liikkua. Jos voi, niin palautetaan tosi, jos ei, niin ei voida liikkua.
@@ -40,16 +40,17 @@ namespace BAB.Control
             {
                 if (Input.GetMouseButton(0)) //Jos säde osuu tiettyyn kohtaan kartalla (painamalla vasenta hiiren painiketta), niin liikutaan siihen. Nappia voidaan myös pitää pohjassa, jolloin pelaaja seuraa hiiren liikettä (Vrt.GetMouseButtonDown)
                 {
-                    GetComponent<Move>().MoveTo(hit.point); //point propertilla tarkoitetaan kohtaa missä säde osuu lähimpään collideriin
+                    GetComponent<Fight>().Cancel(); //Kutsutaan Cancel-metodia Fight-luokasta. Tämä palauttaa pelaajan aina pelaajan takaisin liikkeeseen, vaikka olisi combatissa (Toivottavasti) .
+                    GetComponent<Move>().StartMoving(hit.point); 
                 }
-                return true; //Palautetaan säteen sijainti tosi, jos kohtaan voidaan liikkua
+                return true; 
             }
-            return false; //Jos säde ei löydä kohdetta (collideria) mihin liikkua, niin pelaaja pysyy paikallaan.
+            return false; 
         }
 
         private static Ray GetMouseRay()
         {
-            return Camera.main.ScreenPointToRay(Input.mousePosition); //Palautetaan kursorin sijainti
+            return Camera.main.ScreenPointToRay(Input.mousePosition); 
         }
     }
 }

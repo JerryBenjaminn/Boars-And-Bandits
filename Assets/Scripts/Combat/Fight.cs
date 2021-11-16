@@ -11,9 +11,7 @@ namespace BAB.Combat
         [SerializeField]
         float combatRange = 2f;
         Transform target;
-        NavMeshAgent navMeshAgent;
-        
-
+ 
         private void Update()
         {
             MoveToRange();
@@ -28,14 +26,18 @@ namespace BAB.Combat
         {
             if (target != null) //Tarkistetaan onko vihollinen "olemassa"
             {
-                GetComponent<Move>().MoveTo(target.position); //Jos vihollinen on havaittu ja sitä painetaan, niin liikutaan vihollisen luo
+                GetComponent<Move>().StartMoving(target.position); //Jos vihollinen on havaittu ja sitä painetaan, niin liikutaan vihollisen luo
                 float distance = Vector3.Distance(target.position, transform.position); //Luodaan muuttuja distance, joka laskee kahden pisteen välisen etäisyyden. Tässä tapauksessa pelaajan ja vihollisen
                 print("Distance to the target is: " + distance); //Placeholder metodin testaamiseen
                     if (distance < combatRange) //Jos pelaajan etäisyys on pienempi kuin combatRange muuttuja, niin pelaaja pysähtyy. Tämä siksi, ettei haluta pelaajan menevän päällekkäin vihollisen kanssa combatin alkaessa
                     {
-                    GetComponent<Move>().Stop();
+                        GetComponent<Move>().Stop();
                     }               
             }
+        }
+        public void Cancel()
+        {
+            target = null;          
         }
     }
 }
