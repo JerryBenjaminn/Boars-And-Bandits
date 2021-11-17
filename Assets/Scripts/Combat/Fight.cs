@@ -56,6 +56,7 @@ namespace BAB.Combat
         {
             Health health = target.GetComponent<Health>();
             health.TakeDamage(damage);
+
         }
         public void Cancel()
         {
