@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using BAB.Combat;
+using BAB.Control;
 
 namespace BAB.Movement
 {
-    public class Move : MonoBehaviour
+    public class Move : MonoBehaviour, IAction
     {
         NavMeshAgent navMeshAgent; //Alustetaan NavMeshAgent-komponentti
         
@@ -28,14 +28,13 @@ namespace BAB.Movement
         }
         public void StartMoving(Vector3 destination)
         {
-            //GetComponent<Fight>().Cancel();
             MoveTo(destination);
         }
-        public void Stop()
+        public void Cancel()
         {
             navMeshAgent.isStopped = true;
         }
-
+    
         private void UpdateAnimator() //Metodi animaation liikuttamiseksi pelaajan nopeuteen 
         {
             Vector3 velocity = navMeshAgent.velocity; //Luodaan Vector3-muuttuja velocity ja haetaan NavMeshAgent- komponentin nopeus

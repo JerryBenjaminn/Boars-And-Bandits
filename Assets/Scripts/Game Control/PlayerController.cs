@@ -8,6 +8,7 @@ namespace BAB.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        private MonoBehaviour action;
 
         void Update()
         {
@@ -40,8 +41,8 @@ namespace BAB.Control
             {
                 if (Input.GetMouseButton(0)) //Jos säde osuu tiettyyn kohtaan kartalla (painamalla vasenta hiiren painiketta), niin liikutaan siihen. Nappia voidaan myös pitää pohjassa, jolloin pelaaja seuraa hiiren liikettä (Vrt.GetMouseButtonDown)
                 {
-                    GetComponent<Fight>().Cancel(); //Kutsutaan Cancel-metodia Fight-luokasta. Tämä palauttaa pelaajan aina pelaajan takaisin liikkeeseen, vaikka olisi combatissa (Toivottavasti) .
-                    GetComponent<Move>().StartMoving(hit.point); 
+                    GetComponent<Fight>().Cancel(); //Kutsutaan Cancel-metodia Fight-luokasta. Tämä palauttaa pelaajan aina pelaajan takaisin liikkeeseen, vaikka olisi combatissa (Toivottavasti).                   
+                    GetComponent<Move>().StartMoving(hit.point);
                 }
                 return true; 
             }
