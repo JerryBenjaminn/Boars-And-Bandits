@@ -52,7 +52,7 @@ namespace BAB.Combat
                 lastAttack = 0f;
             }            
         }
-        void Hit() //Tätä kutsutaan animaattorista
+        void Hit() //Tätä kutsutaan animaattorista (hit event)
         {
             Health health = target.GetComponent<Health>();
             health.TakeDamage(damage);
