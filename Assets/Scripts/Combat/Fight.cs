@@ -37,15 +37,16 @@ namespace BAB.Combat
                 GetComponent<Move>().StartMoving(target.position); //Jos vihollinen on havaittu ja sitä painetaan, niin liikutaan vihollisen luo
                 float distance = Vector3.Distance(target.position, transform.position); //Luodaan muuttuja distance, joka laskee kahden pisteen välisen etäisyyden. Tässä tapauksessa pelaajan ja vihollisen
                     if (distance < combatRange) //Jos pelaajan etäisyys on pienempi kuin combatRange muuttuja, niin pelaaja pysähtyy. Tämä siksi, ettei haluta pelaajan menevän päällekkäin vihollisen kanssa combatin alkaessa
-                {
-                    GetComponent<Move>().Cancel();
-                    AttackAnimation();
-                }
+                    {
+                        GetComponent<Move>().Cancel();
+                        AttackAnimation();
+                    }
             }
         }
 
         private void AttackAnimation()
-        { 
+        {
+            transform.LookAt(target); //Kun pelaaja hyökkää, niin se katsoo aina vihollista päin
             if(lastAttack > timeBetweenAttacks)
             {
                 GetComponent<Animator>().SetTrigger("Attack"); //Kun lyödään, niin tämä kutsuu Hit() eventtiä
@@ -54,12 +55,12 @@ namespace BAB.Combat
         }
         void Hit() //Tätä kutsutaan animaattorista (hit event)
         {
+            if (target == null) return;
             Health health = target.GetComponent<Health>();
-            health.TakeDamage(damage);
-
+            health.TakeDamage(damage, this.gameObject);
         }
         public void Cancel()
-        {
+        {           
             target = null;          
         }
 

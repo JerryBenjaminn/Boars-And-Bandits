@@ -8,8 +8,7 @@ namespace BAB.Control
 {
     public class PlayerController : MonoBehaviour
     {
-        private MonoBehaviour action;
-
+        
         void Update()
         {
             if (InteractWithCombat()) return;
@@ -25,7 +24,7 @@ namespace BAB.Control
                 if (target == null) continue; //Jos vihollista ei löydetä, niin säde jatkaa eteenpäin
 
                 if (Input.GetMouseButton(0)) 
-                {
+                {                   
                     GetComponent<Fight>().Attack(target);                   
                 }
                 return true; 
