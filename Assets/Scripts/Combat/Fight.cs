@@ -24,7 +24,7 @@ namespace BAB.Combat
             MoveToRange();
         }
 
-        public void Attack(Enemy combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionQueue>().StartAction(this);
             target = combatTarget.transform;

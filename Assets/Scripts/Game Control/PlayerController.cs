@@ -8,6 +8,7 @@ namespace BAB.Control
 {
     public class PlayerController : MonoBehaviour
     {
+
         
         void Update()
         {
@@ -22,10 +23,11 @@ namespace BAB.Control
             {
                 Enemy target = hit.transform.GetComponent<Enemy>(); 
                 if (target == null) continue; //Jos vihollista ei löydetä, niin säde jatkaa eteenpäin
+                GameObject targetGameObject = target.gameObject;
 
                 if (Input.GetMouseButton(0)) 
                 {                   
-                    GetComponent<Fight>().Attack(target);                   
+                    GetComponent<Fight>().Attack(target.gameObject);                   
                 }
                 return true; 
             }

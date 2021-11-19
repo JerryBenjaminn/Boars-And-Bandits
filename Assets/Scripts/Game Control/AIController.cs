@@ -1,6 +1,8 @@
+using BAB.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace BAB.Control
 {
@@ -8,12 +10,18 @@ namespace BAB.Control
     {
         [SerializeField]
         float chaseDistance = 5f;
-
+        Fight fight;
+        GameObject player;
+        private void Start()
+        {
+            fight = GetComponent<Fight>();
+            player = GameObject.FindWithTag("Player");
+        }
         private void Update()
         {            
             if (DistanceToPlayer() < chaseDistance) 
             {
-                print(gameObject.name + "Start chasing!");
+                GetComponent<Fight>().Attack(player);
             }
         }
 
