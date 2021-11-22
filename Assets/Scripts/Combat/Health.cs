@@ -8,20 +8,31 @@ namespace BAB.Combat
     {
         [SerializeField]
         float hp = 10;
+        GameObject player;
+        bool isDead = false;
 
-        
+        private void Start()
+        {
+            player = GameObject.FindWithTag("Player");
+        }
         public void TakeDamage(float damage, GameObject damageDealer)
         {
             hp = Mathf.Max(hp - damage, 0);
-            print(this.gameObject.name + " took " + damage + " from the " + damageDealer);
+            print(this.gameObject.name + " took " + damage + " damage from the " + damageDealer);
             if (hp == 0)
             {
+                PlayerDie();
                 Enemy enemy = transform.GetComponent<Enemy>();
-                enemy.Die(damageDealer); //Kun hp on nolla, niin kutsutaan Die()- metodia, joka triggeraa ragdoll-efektin kuollessa
-       
+                enemy.Die(damageDealer); //Kun hp on nolla, niin kutsutaan Die()- metodia, joka triggeraa ragdoll-efektin kuollessa               
             }
         }
 
-       
+        private void PlayerDie()
+        {
+            if (isDead) return;
+
+            isDead = true;
+            GetComponent<Animator>().SetTrigger("Die");
+        }
     }
 }
