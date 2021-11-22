@@ -63,7 +63,7 @@ namespace BAB.Combat
         void Hit() //Tätä kutsutaan animaattorista (hit event)
         {
             if (target == null) return;
-            target.TakeDamage(damage, this.gameObject);
+            target.TakeDamage(damage, gameObject);           
         }
         public void Cancel()
         {           

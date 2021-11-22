@@ -28,15 +28,15 @@ namespace BAB.Combat
                 PlayerDie();
                 IsDead();
                 Enemy enemy = transform.GetComponent<Enemy>();
-                enemy.Die(damageDealer); //Kun hp on nolla, niin kutsutaan Die()- metodia, joka triggeraa ragdoll-efektin kuollessa               
-            }
+                enemy.Die(damageDealer); //Kun hp on nolla, niin kutsutaan Die()- metodia, joka triggeraa ragdoll-efektin kuollessa
+            } return;
         }
 
         private void PlayerDie()
         {
             if (isDead) return;
             isDead = true;
-            GetComponent<Animator>().SetTrigger("Die");
+            GetComponent<Animator>().SetTrigger("Die");           
         }
     }
 }
