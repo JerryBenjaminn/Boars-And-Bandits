@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118386477231543175, guid: 2d0a9ad98a589294b86178f4e4796789, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 674084662583804738, guid: 2d0a9ad98a589294b86178f4e4796789, type: 3}
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a54fe0faf979f4593e9ad49f391953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceOnDeath: 500
+  hipsRb: {fileID: 0}
 --- !u!195 &1968905672
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -164,6 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa24889c0ac33194ba91711fc9dad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatRange: 2
+  combatRange: 1
   timeBetweenAttacks: 1
   damage: 1

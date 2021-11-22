@@ -8,12 +8,11 @@ namespace BAB.Combat
     {
         [SerializeField]
         float hp = 10;
-        GameObject player;
         bool isDead = false;
 
-        private void Start()
+        public bool IsDead()
         {
-            player = GameObject.FindWithTag("Player");
+            return isDead;
         }
         public void TakeDamage(float damage, GameObject damageDealer)
         {

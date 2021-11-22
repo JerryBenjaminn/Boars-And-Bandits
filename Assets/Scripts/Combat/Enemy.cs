@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BAB.Combat
 {
+    [RequireComponent(typeof(Health))]
     public class Enemy : MonoBehaviour
     {
         [SerializeField]
@@ -17,7 +18,7 @@ namespace BAB.Combat
         }
         public void Die(GameObject damageDealer)
         {
-                Destroy(gameObject, 4f); // Kun vihollinen kuolee, niin se tuhoutuu 4 sekunnin kuluttua
+                Destroy(gameObject, 2f); // Kun vihollinen kuolee, niin se tuhoutuu 4 sekunnin kuluttua
                 GetComponent<Animator>().enabled = false;
                 setRigidBodyState(false);
                 setColliderState(true);
