@@ -12691,7 +12691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 6.21, z: -7.570792}
+  m_FollowOffset: {x: -0.26, y: 6.82, z: -7.209998}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -15302,6 +15302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8934898416519345785, guid: dac450a222b99434f8795629fc78f642, type: 3}
+      propertyPath: chaseDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1968905679, guid: dac450a222b99434f8795629fc78f642, type: 3}
       propertyPath: m_Constraints
       value: 126
@@ -15579,8 +15583,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701933620}
-  m_LocalRotation: {x: 0.3367713, y: -0.00000003015401, z: 0.000000010784995, w: 0.9415865}
-  m_LocalPosition: {x: 3.07, y: 6.21, z: -37.640793}
+  m_LocalRotation: {x: 0.3695987, y: 0.01674523, z: -0.0066618975, w: 0.9290167}
+  m_LocalPosition: {x: 2.81, y: 6.82, z: -37.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 655345450}
@@ -15830,7 +15834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 243754537423631342, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
       propertyPath: hp
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 807134873919041924, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
       propertyPath: m_RootOrder
