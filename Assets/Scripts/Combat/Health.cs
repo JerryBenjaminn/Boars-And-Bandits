@@ -10,6 +10,11 @@ namespace BAB.Combat
         float hp = 10;
         bool isDead = false;
 
+
+        private void Start()
+        {
+            
+        }
         public bool IsDead()
         {
             return isDead;
@@ -21,6 +26,7 @@ namespace BAB.Combat
             if (hp == 0)
             {
                 PlayerDie();
+                IsDead();
                 Enemy enemy = transform.GetComponent<Enemy>();
                 enemy.Die(damageDealer); //Kun hp on nolla, niin kutsutaan Die()- metodia, joka triggeraa ragdoll-efektin kuollessa               
             }
@@ -32,6 +38,7 @@ namespace BAB.Combat
 
             isDead = true;
             GetComponent<Animator>().SetTrigger("Die");
+            
         }
     }
 }

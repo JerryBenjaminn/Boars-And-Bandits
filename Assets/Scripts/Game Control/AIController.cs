@@ -23,6 +23,10 @@ namespace BAB.Control
             {
                 GetComponent<Fight>().Attack(player);
             }
+            else
+            {
+                fight.Cancel();
+            }
         }
 
         private float DistanceToPlayer()

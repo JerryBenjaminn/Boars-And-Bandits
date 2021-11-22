@@ -18,16 +18,21 @@ namespace BAB.Combat
         [SerializeField]
         float damage = 1f;
 
+        private void Start()
+        {
+            Debug.Log(target);
+        }
         private void Update()
         {
             lastAttack += Time.deltaTime;
+            if (target == null) return; // Tehd‰‰n null checki
             if (target.IsDead()) return;
             MoveToRange();
         }
 
         public void Attack(GameObject combatTarget)
         {
-            GetComponent<ActionQueue>().StartAction(this);
+            //GetComponent<ActionQueue>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
         }
 

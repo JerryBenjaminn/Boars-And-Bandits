@@ -6,16 +6,16 @@ namespace BAB.Control
 {
     public class ActionQueue : MonoBehaviour
     {
-        IAction currentAction;
+        /* IAction currentAction;
 
-        public void StartAction(IAction action)
-        {
-            if (currentAction == action) return;
-            if(currentAction != null)
-            {
-                currentAction.Cancel();
-            }           
-            currentAction = action;           
-        }
+         public void StartAction(IAction action)
+         {
+             if (currentAction == action) return;
+             if(currentAction != null)
+             {
+                 currentAction.Cancel();
+             }           
+             currentAction = action;           
+         }*/
     }
 }
