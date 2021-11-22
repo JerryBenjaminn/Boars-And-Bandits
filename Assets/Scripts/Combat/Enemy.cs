@@ -18,7 +18,7 @@ namespace BAB.Combat
         }
         public void Die(GameObject damageDealer)
         {
-                Destroy(gameObject, 2f); // Kun vihollinen kuolee, niin se tuhoutuu 4 sekunnin kuluttua
+                Destroy(gameObject, 2f); // Kun vihollinen kuolee, niin se tuhoutuu 2 sekunnin kuluttua
                 GetComponent<Animator>().enabled = false;
                 setRigidBodyState(false);
                 setColliderState(true);

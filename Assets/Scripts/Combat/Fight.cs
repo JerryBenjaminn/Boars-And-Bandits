@@ -68,7 +68,7 @@ namespace BAB.Combat
         public void Cancel()
         {           
             GetComponent<Animator>().SetTrigger("stopAttack");
-            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().ResetTrigger("stopAttack"); 
             target = null;          
         }
 

@@ -35,10 +35,8 @@ namespace BAB.Combat
         private void PlayerDie()
         {
             if (isDead) return;
-
             isDead = true;
             GetComponent<Animator>().SetTrigger("Die");
-            
         }
     }
 }
