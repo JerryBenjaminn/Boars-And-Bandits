@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using BAB.Movement;
 
 namespace BAB.Control
 {
@@ -12,10 +13,18 @@ namespace BAB.Control
         float chaseDistance = 5f;
         Fight fight;
         GameObject player;
+        NavMeshAgent navMeshAgent;
+        
+        
+
+        Vector3 originalLocation;
         private void Start()
         {
             fight = GetComponent<Fight>();
+            navMeshAgent = GetComponent<NavMeshAgent>();
             player = GameObject.FindWithTag("Player");
+            originalLocation = transform.position;
+            
         }
         private void Update()
         {            
@@ -25,8 +34,9 @@ namespace BAB.Control
             }
             else
             {
+                navMeshAgent.destination = originalLocation;
                 fight.Cancel();
-            }
+            }         
         }
 
         private float DistanceToPlayer()

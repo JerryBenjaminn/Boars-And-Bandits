@@ -17,11 +17,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1968905672, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968905672, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
+      propertyPath: m_Acceleration
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968905672, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 1968905677, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
       propertyPath: damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968905677, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
+      propertyPath: combatRange
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1968905678, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
       propertyPath: m_Enabled
@@ -75,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3671468892719971322, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 92afc596e53cb454182b07a144d86e3d, type: 2}
     - target: {fileID: 4981682522673654584, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
       propertyPath: m_Name
       value: Enemy Variant 1

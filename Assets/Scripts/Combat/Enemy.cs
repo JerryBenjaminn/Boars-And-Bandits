@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BAB.Combat
 {
-    [RequireComponent(typeof(Health))]
+    
     public class Enemy : MonoBehaviour
     {
         [SerializeField]

@@ -18,10 +18,6 @@ namespace BAB.Combat
         [SerializeField]
         float damage = 1f;
 
-        private void Start()
-        {
-            Debug.Log(target);
-        }
         private void Update()
         {
             lastAttack += Time.deltaTime;
