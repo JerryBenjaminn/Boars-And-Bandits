@@ -972,4 +972,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f3bbe114d57841ae3ecbfa64ab5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 5
+  chaseDistance: 20
