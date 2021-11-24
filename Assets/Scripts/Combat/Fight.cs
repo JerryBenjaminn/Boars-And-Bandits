@@ -7,7 +7,7 @@ using BAB.Control;
 
 namespace BAB.Combat
 {
-    public class Fight : MonoBehaviour, IAction
+    public class Fight : MonoBehaviour
     {
         [SerializeField]
         float combatRange = 2f;

@@ -6,7 +6,7 @@ using BAB.Control;
 
 namespace BAB.Movement
 {
-    public class Move : MonoBehaviour, IAction
+    public class Move : MonoBehaviour
     {
         NavMeshAgent navMeshAgent; //Alustetaan NavMeshAgent-komponentti
         
