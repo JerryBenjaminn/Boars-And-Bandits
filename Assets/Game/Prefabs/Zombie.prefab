@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 92afc596e53cb454182b07a144d86e3d, type: 2}
     - target: {fileID: 4981682522673654584, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant 1
+      value: Zombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d046276fc68105243885fa65abb7d3ad, type: 3}
