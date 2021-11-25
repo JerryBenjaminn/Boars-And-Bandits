@@ -21,6 +21,8 @@ namespace BAB.Combat
         GameObject weaponPrefab = null;
         [SerializeField]
         Transform handTransform = null;
+        [SerializeField]
+        AnimatorOverrideController weaponOverride = null;
 
 
         private void Start()
@@ -38,6 +40,8 @@ namespace BAB.Combat
         private void InstantiateWeapon()
         {
             Instantiate(weaponPrefab, handTransform);
+            Animator animator = GetComponent<Animator>();
+            animator.runtimeAnimatorController = weaponOverride;
         }
         public void Attack(GameObject combatTarget)
         {
