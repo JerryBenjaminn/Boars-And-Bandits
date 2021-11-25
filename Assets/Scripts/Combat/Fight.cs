@@ -17,7 +17,16 @@ namespace BAB.Combat
         float lastAttack = 0f;
         [SerializeField]
         float damage = 1f;
+        [SerializeField]
+        GameObject weaponPrefab = null;
+        [SerializeField]
+        Transform handTransform = null;
 
+
+        private void Start()
+        {
+            InstantiateWeapon();
+        }
         private void Update()
         {
             lastAttack += Time.deltaTime;
@@ -26,6 +35,10 @@ namespace BAB.Combat
             MoveToRange();
         }
 
+        private void InstantiateWeapon()
+        {
+            Instantiate(weaponPrefab, handTransform);
+        }
         public void Attack(GameObject combatTarget)
         {
             //GetComponent<ActionQueue>().StartAction(this);

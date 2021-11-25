@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741550028521064907, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: New Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1168855844067614655, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
@@ -78,6 +78,11 @@ PrefabInstance:
 --- !u!1 &1516866407403182786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4741550028521064907, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
+  m_PrefabInstance: {fileID: 6107342154995110665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5019876059193695805 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1255253022191832372, guid: 868550ed905c39b4f83d8f88d82698dd, type: 3}
   m_PrefabInstance: {fileID: 6107342154995110665}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &1469240148
@@ -125,3 +130,5 @@ MonoBehaviour:
   combatRange: 1.5
   timeBetweenAttacks: 1
   damage: 5
+  weaponPrefab: {fileID: 8489889927907163960, guid: e6d1eaa646536534f8178cb802e45f53, type: 3}
+  handTransform: {fileID: 5019876059193695805}
