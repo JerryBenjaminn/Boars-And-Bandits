@@ -43,6 +43,7 @@ namespace BAB.Combat
 
         public void InstantiateWeapon()
         {
+            if (weapon == null) return;
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(handTransform, animator);
         }

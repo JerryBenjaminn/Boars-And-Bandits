@@ -14,8 +14,6 @@ namespace BAB.Control
         Fight fight;
         GameObject player;
         NavMeshAgent navMeshAgent;
-        
-        
 
         Vector3 originalLocation;
         private void Start()

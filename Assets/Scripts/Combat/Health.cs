@@ -31,7 +31,7 @@ namespace BAB.Combat
         {
             if (isDead) return; //Jos pelaaja on hengiss‰, niin palautetaan arvo ja jatketaan
             isDead = true; //Jos pelaaja on kuollut, niin n‰ytet‰‰n death animaatio
-            GetComponent<Animator>().SetTrigger("Die");           
+            GetComponent<Animator>().SetTrigger("Die");             
         }
     }
 }
