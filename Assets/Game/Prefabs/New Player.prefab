@@ -130,6 +130,5 @@ MonoBehaviour:
   combatRange: 1.5
   timeBetweenAttacks: 1
   damage: 5
-  weaponPrefab: {fileID: 8489889927907163960, guid: e6d1eaa646536534f8178cb802e45f53, type: 3}
   handTransform: {fileID: 5019876059193695805}
-  weaponOverride: {fileID: 22100000, guid: db4003e798dbd0d4bb3980481da7d879, type: 2}
+  weapon: {fileID: 11400000, guid: c988fda53099e134392698fa4d5aabae, type: 2}

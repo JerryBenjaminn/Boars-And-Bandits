@@ -11,18 +11,22 @@ namespace BAB.Combat
     {
         [SerializeField]
         float combatRange = 2f;
+
         Health target;
+
         [SerializeField]
         float timeBetweenAttacks = 1f;
         float lastAttack = 0f;
+
         [SerializeField]
         float damage = 1f;
-        [SerializeField]
-        GameObject weaponPrefab = null;
+
         [SerializeField]
         Transform handTransform = null;
+
         [SerializeField]
-        AnimatorOverrideController weaponOverride = null;
+        Weapon weapon = null;
+        
 
 
         private void Start()
@@ -32,20 +36,18 @@ namespace BAB.Combat
         private void Update()
         {
             lastAttack += Time.deltaTime;
-            if (target == null) return; // Tehd‰‰n null checki
+            if (target == null) return;
             if (target.IsDead()) return;
             MoveToRange();
         }
 
-        private void InstantiateWeapon()
+        public void InstantiateWeapon()
         {
-            Instantiate(weaponPrefab, handTransform);
             Animator animator = GetComponent<Animator>();
-            animator.runtimeAnimatorController = weaponOverride;
+            weapon.Spawn(handTransform, animator);
         }
         public void Attack(GameObject combatTarget)
         {
-            //GetComponent<ActionQueue>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
         }
 
