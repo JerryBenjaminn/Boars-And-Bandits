@@ -20,9 +20,9 @@ namespace BAB.Control
         Vector3 originalLocation;
         private void Start()
         {
-            fight = GetComponent<Fight>();
-            navMeshAgent = GetComponent<NavMeshAgent>();
-            player = GameObject.FindWithTag("Player");
+            fight = GetComponent<Fight>(); //Haetaan fight-scripti
+            navMeshAgent = GetComponent<NavMeshAgent>(); // Haetaan vihollisen navmesh-komponentti
+            player = GameObject.FindWithTag("Player"); //Haetaan pelaaja tagilla
             originalLocation = transform.position;
             
         }
@@ -30,11 +30,11 @@ namespace BAB.Control
         {            
             if (DistanceToPlayer() < chaseDistance) 
             {
-                GetComponent<Fight>().Attack(player);
+                GetComponent<Fight>().Attack(player); // Jos pelaaja on aggrorangella, niin vihollinen l‰htee kohti pelaajaa
             }
             else
             {
-                navMeshAgent.destination = originalLocation;
+                navMeshAgent.destination = originalLocation; // Jos pelaaja poistuu aggrorangelta, niin vihollinen palaa takaisin alkuper‰iseen paikkaansa
                 fight.Cancel();
             }         
         }
@@ -48,7 +48,7 @@ namespace BAB.Control
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, chaseDistance);
+            Gizmos.DrawWireSphere(transform.position, chaseDistance); //Piirret‰‰n vihollisen ymp‰rille ympyr‰, joka visualisoi aggrorangen helpomman editoinnin vuoksi
         }
     }
 }

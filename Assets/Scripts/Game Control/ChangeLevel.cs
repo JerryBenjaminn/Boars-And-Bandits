@@ -8,13 +8,13 @@ namespace BAB.SceneManagement
     public class ChangeLevel : MonoBehaviour
     {
         [SerializeField]
-        int loadScene = 0;
+        int loadScene = 0; 
 
-        private void OnTriggerEnter(Collider player)
+        private void OnTriggerEnter(Collider player) //Yksinkertainen metodi eri scenejen vaihtamiseen, kun pelaaja törmää collideriin (change level)
         {
-            if(player.tag == "Player")
+            if(player.tag == "Player") //Haetaan pelaaja tagilla
             {
-                SceneManager.LoadScene(loadScene);
+                SceneManager.LoadScene(loadScene); //Vaihdetaan scene sen indexin mukaan
             }
         }
     }
