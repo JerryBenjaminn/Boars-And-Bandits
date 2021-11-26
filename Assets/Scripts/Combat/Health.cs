@@ -17,7 +17,7 @@ namespace BAB.Combat
         public void TakeDamage(float damage, GameObject damageDealer) //Metodi vahingon ottamiseen. Kirjoitetaan myös consoliin, kuka teki vahingon ja kenelle
         {
             hp = Mathf.Max(hp - damage, 0);
-            print(this.gameObject.name + " took " + damage + " damage from the " + damageDealer);
+            print(this.gameObject.name + " took " + 2 * damage + " damage from the " + damageDealer);
             if (hp == 0)
             {
                 PlayerDie();

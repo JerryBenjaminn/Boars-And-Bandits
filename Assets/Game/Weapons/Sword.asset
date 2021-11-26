@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponOverride: {fileID: 22100000, guid: db4003e798dbd0d4bb3980481da7d879, type: 2}
   weaponPrefab: {fileID: 8489889927907163960, guid: e6d1eaa646536534f8178cb802e45f53, type: 3}
-  damage: 5
+  damage: 2.5
   combatRange: 2
