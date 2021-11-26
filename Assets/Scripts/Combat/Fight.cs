@@ -9,8 +9,7 @@ namespace BAB.Combat
 {
     public class Fight : MonoBehaviour
     {
-        [SerializeField]
-        float combatRange = 2f;
+      
 
         Health target;
 
@@ -18,20 +17,20 @@ namespace BAB.Combat
         float timeBetweenAttacks = 1f;
         float lastAttack = 0f;
 
-        [SerializeField]
-        float damage = 1f;
+        
 
         [SerializeField]
         Transform handTransform = null;
 
         [SerializeField]
-        Weapon weapon = null;
+        Weapon defaultWeapon = null;
+        Weapon currentWeapon = null;
         
 
 
         private void Start()
         {
-            InstantiateWeapon();
+            EquipWeapon(defaultWeapon);
         }
         private void Update()
         {
@@ -41,9 +40,10 @@ namespace BAB.Combat
             MoveToRange();
         }
 
-        public void InstantiateWeapon()
+        public void EquipWeapon(Weapon weapon)
         {
             if (weapon == null) return;
+            currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(handTransform, animator);
         }
@@ -58,7 +58,7 @@ namespace BAB.Combat
             {
                 GetComponent<Move>().StartMoving(target.transform.position); //Jos vihollinen on havaittu ja sitä painetaan, niin liikutaan vihollisen luo
                 float distance = Vector3.Distance(transform.position, target.transform.position); //Luodaan muuttuja distance, joka laskee kahden pisteen välisen etäisyyden. Tässä tapauksessa pelaajan ja vihollisen
-                    if (distance < combatRange) //Jos pelaajan etäisyys on pienempi kuin combatRange muuttuja, niin pelaaja pysähtyy. Tämä siksi, ettei haluta pelaajan menevän päällekkäin vihollisen kanssa combatin alkaessa
+                    if (distance < defaultWeapon.GetRange()) //Jos pelaajan etäisyys on pienempi kuin combatRange muuttuja, niin pelaaja pysähtyy. Tämä siksi, ettei haluta pelaajan menevän päällekkäin vihollisen kanssa combatin alkaessa
                     {
                         GetComponent<Move>().Cancel();
                         AttackAnimation();
@@ -71,7 +71,6 @@ namespace BAB.Combat
             transform.LookAt(target.transform); //Kun pelaaja hyökkää, niin se katsoo aina vihollista päin
             if(lastAttack > timeBetweenAttacks)
             {
-                GetComponent<Animator>().ResetTrigger("Attack");
                 GetComponent<Animator>().SetTrigger("Attack"); //Kun lyödään, niin tämä kutsuu Hit() eventtiä
                 lastAttack = 0f;
             }            
@@ -79,7 +78,7 @@ namespace BAB.Combat
         void Hit() //Tätä kutsutaan animaattorista (hit event)
         {
             if (target == null) return;
-            target.TakeDamage(damage, gameObject);           
+            target.TakeDamage(currentWeapon.GetDamage(), gameObject);           
         }
         public void Cancel()
         {           

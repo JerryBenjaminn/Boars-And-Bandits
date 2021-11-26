@@ -15,7 +15,6 @@ namespace BAB.Movement
             navMeshAgent = GetComponent<NavMeshAgent>(); //Haetaan NavMeshAgent-komponentti 
         }
 
-
         void Update()
         {
             UpdateAnimator();

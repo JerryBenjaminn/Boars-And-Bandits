@@ -9,11 +9,30 @@ namespace BAB.Combat
         AnimatorOverrideController weaponOverride = null;
         [SerializeField]
         GameObject weaponPrefab = null;
+        [SerializeField]
+        float damage = 1f;
+        [SerializeField]
+        float combatRange = 0f;
 
         public void Spawn(Transform handTransform, Animator animator)
         {
-            Instantiate(weaponPrefab, handTransform);
-            animator.runtimeAnimatorController = weaponOverride;
+            if(weaponPrefab != null)
+            {
+                Instantiate(weaponPrefab, handTransform);
+            }
+            if(weaponOverride != null)
+            {
+                animator.runtimeAnimatorController = weaponOverride;
+            }           
+        }
+        public float GetDamage()
+        {
+            return damage;
+        }
+
+        public float GetRange()
+        {
+            return combatRange;
         }
     }
 
