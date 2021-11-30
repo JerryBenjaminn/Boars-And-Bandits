@@ -13,12 +13,6 @@ namespace BAB.Combat
         bool isDead = false;
         public HealthBar healthBar;
         
-
-        private void Start()
-        {
-
-        }
-
         public bool IsDead() //Metodi tarkastaa, onko pelaaja kuollut
         {
             return isDead;

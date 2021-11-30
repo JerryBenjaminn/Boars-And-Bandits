@@ -8,16 +8,12 @@ using BAB.Control;
 namespace BAB.Combat
 {
     public class Fight : MonoBehaviour
-    {
-      
-
+    {    
         Health target;
 
         [SerializeField]
         float timeBetweenAttacks = 1f;
         float lastAttack = 0f;
-
-        
 
         [SerializeField]
         Transform handTransform = null;
@@ -26,8 +22,6 @@ namespace BAB.Combat
         Weapon defaultWeapon = null;
         Weapon currentWeapon = null;
         
-
-
         private void Start()
         {
             EquipWeapon(defaultWeapon);
@@ -86,7 +80,6 @@ namespace BAB.Combat
             GetComponent<Animator>().ResetTrigger("stopAttack"); 
             target = null;          
         }
-
-      
+     
     }
 }

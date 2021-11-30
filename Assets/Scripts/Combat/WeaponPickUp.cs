@@ -10,10 +10,6 @@ namespace BAB.Combat
         Weapon weapon = null;
         Animator animator;
 
-        private void Start()
-        {
-
-        }
         public void OnTriggerEnter(Collider player)
         {
             if (player.tag == "Player")
