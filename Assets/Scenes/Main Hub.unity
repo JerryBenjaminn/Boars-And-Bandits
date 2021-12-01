@@ -13955,7 +13955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6919741637504503219, guid: a70b2d35172a1aa4284f81430d8da480, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8063524508390922331, guid: a70b2d35172a1aa4284f81430d8da480, type: 3}
       propertyPath: m_Name
@@ -16325,7 +16325,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701933620}
-  m_LocalRotation: {x: -0.09578033, y: 0.90391403, z: -0.2821376, w: -0.30686152}
+  m_LocalRotation: {x: -0.09578055, y: 0.90391374, z: -0.2821375, w: -0.30686226}
   m_LocalPosition: {x: 27.879274, y: 6.82, z: -10.331981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16794,15 +16794,15 @@ RectTransform:
   m_GameObject: {fileID: 1923234912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.007946165, y: 0.0008696101, z: 0.01}
+  m_LocalScale: {x: 1.5446148, y: 0.15852612, z: 0.57627}
   m_Children:
   - {fileID: 2099219331}
-  m_Father: {fileID: 1469240145}
-  m_RootOrder: 2
+  m_Father: {fileID: 1971808348}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.99}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 94.1, y: -25.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923234914
@@ -16844,7 +16844,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1923234916
 Canvas:
   m_ObjectHideFlags: 0
@@ -16960,6 +16960,7 @@ RectTransform:
   - {fileID: 1261627331}
   - {fileID: 62352318}
   - {fileID: 640752370}
+  - {fileID: 1923234913}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17435,6 +17436,10 @@ PrefabInstance:
       propertyPath: defaultWeapon
       value: 
       objectReference: {fileID: 11400000, guid: dbc8123adc91dd1449e0819122f57452, type: 2}
+    - target: {fileID: 1469240138, guid: fcad645e563c9c8498b446cc4a2b49aa, type: 3}
+      propertyPath: defaultWeaponName
+      value: Unarmed
+      objectReference: {fileID: 0}
     - target: {fileID: 1516866407403182786, guid: fcad645e563c9c8498b446cc4a2b49aa, type: 3}
       propertyPath: m_Name
       value: Player

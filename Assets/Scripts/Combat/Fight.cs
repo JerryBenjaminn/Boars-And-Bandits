@@ -21,10 +21,14 @@ namespace BAB.Combat
         [SerializeField]
         Weapon defaultWeapon = null;
         Weapon currentWeapon = null;
+
+        [SerializeField]
+        string defaultWeaponName = "Unarmed";
         
         private void Start()
         {
-            EquipWeapon(defaultWeapon);
+            Weapon weapon = Resources.Load<Weapon>(defaultWeaponName);
+            EquipWeapon(weapon);
         }
         private void Update()
         {
